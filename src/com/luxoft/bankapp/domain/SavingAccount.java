@@ -13,19 +13,22 @@ public class SavingAccount extends AbstractAccount {
 
 	public SavingAccount(int id, double amount) {
 		super(id, amount);
-		this.setType(AbstractAccount.SAVING_ACCOUNT_TYPE);
 	}
 	
 	public SavingAccount(int id, double amount, Currency currency) {
 		super(id, amount);
 		this.currency = currency;
-		this.setType(AbstractAccount.SAVING_ACCOUNT_TYPE);
 	}
 	
 	public Currency getCurrency() {
 		return currency;
 	}
-	
+
+	@Override
+	public double maximumAmountToWithdraw() {
+		return getBalance();
+	}
+
 	@Override
 	public String toString() {
 		Formatter fmt = new Formatter(Locale.US);
