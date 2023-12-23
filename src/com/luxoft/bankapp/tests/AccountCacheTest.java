@@ -20,7 +20,7 @@ public class AccountCacheTest {
 
     assertThat(savingAccount, instanceOf(SavingAccount.class));
     assertEquals(0, savingAccount.getId());
-    assertEquals(0, savingAccount.balance, 0);
+    assertEquals(0, savingAccount.getBalance(), 0);
   }
 
   @Test

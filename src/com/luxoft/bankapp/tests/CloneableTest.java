@@ -13,7 +13,7 @@ public class CloneableTest {
     SavingAccount savingAccount = new SavingAccount(1, 100);
     SavingAccount savingAccountClone = (SavingAccount) savingAccount.clone();
 
-    savingAccountClone.balance = 200;
+    savingAccountClone.setBalance(200);
 
     assertNotSame(savingAccount, savingAccountClone);
 
@@ -27,13 +27,13 @@ public class CloneableTest {
     CheckingAccount checkingAccount = new CheckingAccount(1, 100, 50);
     CheckingAccount checkingAccountClone = (CheckingAccount) checkingAccount.clone();
 
-    checkingAccountClone.balance = 200;
-    checkingAccount.overdraft = 100;
+    checkingAccountClone.setBalance(200);
+    checkingAccount.setOverdraft(100);
 
     assertNotSame(checkingAccount, checkingAccountClone);
     assertSame(checkingAccount.getId(), checkingAccountClone.getId());
     assertSame(checkingAccount.getCurrency(), checkingAccountClone.getCurrency());
-    assertNotSame(checkingAccount.balance, checkingAccountClone.balance);
-    assertNotSame(checkingAccount.overdraft, checkingAccountClone.overdraft);
+    assertNotSame(checkingAccount.getBalance(), checkingAccountClone.getBalance());
+    assertNotSame(checkingAccount.getOverdraft(), checkingAccountClone.getOverdraft());
   }
 }
