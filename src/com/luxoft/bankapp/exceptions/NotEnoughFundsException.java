@@ -3,9 +3,9 @@ package com.luxoft.bankapp.exceptions;
 public class NotEnoughFundsException extends BankException {
 	
 	private static final long serialVersionUID = -3034651278778929257L;
-	int id;
-	double balance;
-	double amount;
+	protected int id;
+	protected double balance;
+	protected double amount;
 	
 	public NotEnoughFundsException(String message) {
 		 super(message);
